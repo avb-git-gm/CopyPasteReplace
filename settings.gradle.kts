@@ -1,8 +1,6 @@
 pluginManagement {
     repositories {
+        gradlePluginPortal() // ✅ Needed for plugin resolution
         mavenCentral()
-        gradlePluginPortal()
     }
 }
-
-rootProject.name = "InstaCode"

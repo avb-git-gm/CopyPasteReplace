@@ -4,12 +4,12 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="schemas/idea-plugin.xsd">
 
-    <idea-version since-build="231" until-build="243.*"/>
+    <idea-version since-build="243.24978.46" until-build="243.*"/>
 
 
     <id>com.giabrend.instacode</id>
     <name>InstaCode</name>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <vendor email="avb@giabrend.com" url="https://github.com/avb-git-gm">Giabrend LLC</vendor>
 
     <description><![CDATA[
