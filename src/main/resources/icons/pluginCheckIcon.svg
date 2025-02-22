@@ -1,0 +1,9 @@
+<!-- pluginCheckIcon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="16" height="16"
+     viewBox="0 0 16 16"
+     fill="none">
+    <!-- Simple "tick" path in green -->
+    <path d="M12.73 4.27a.75.75 0 010 1.06l-5.2 5.2a.75.75 0 01-1.06 0L3.27 7.33a.75.75 0 011.06-1.06L6.5 8.44l4.67-4.67a.75.75 0 011.06 0z"
+          fill="#22A822"/>
+</svg>

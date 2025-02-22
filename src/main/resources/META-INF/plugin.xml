@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin
+
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="schemas/idea-plugin.xsd">
+
+    <idea-version since-build="231" until-build="243.*"/>
+
+
+    <id>com.giabrend.instacode</id>
+    <name>InstaCode</name>
+    <version>1.0</version>
+    <vendor email="avb@giabrend.com" url="https://github.com/avb-git-gm">Giabrend LLC</vendor>
+
+    <description><![CDATA[
+        A lightweight tool that allows you to manage the content of the current editor window with a single click, 
+        either via the toolbar or the right-click (context) menu.<br><br>
+
+        <b>Available Actions:</b><br>
+        <ul>
+            <li><b>Copy All Content:</b> Selects all content and copies it to the clipboard.</li>
+            <li><b>Replace All Content:</b> Replaces all content with clipboard content.</li>
+            <li><b>Delete All Content:</b> Clears all content from the active editor.</li>
+        </ul>
+        All actions provide visual feedback and are enabled only when an editor is active.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <!-- Copy All Content Action -->
+        <action id="com.giabrend.instacode.CopyAllCodeAction"
+                class="com.giabrend.instacode.CopyAllCodeAction"
+                text="Copy All"
+                description="Copy all content from the active editor"
+                icon="/icons/pluginCopyAllIcon.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <!-- Replace All Content Action -->
+        <action id="com.giabrend.instacode.PasteReplaceContent"
+                class="com.giabrend.instacode.PasteReplaceContent"
+                text="Replace All with Clipboard Content"
+                description="Replace all content with clipboard content"
+                icon="/icons/pluginPasteReplaceIcon.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <!-- Delete All Content Action -->
+        <action id="com.giabrend.instacode.SelectAllDeleteAction"
+                class="com.giabrend.instacode.SelectAllDeleteAction"
+                text="Delete All"
+                description="Clear content of active editor"
+                icon="/icons/pluginDeleteIcon.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
