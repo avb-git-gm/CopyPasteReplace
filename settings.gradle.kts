@@ -1,6 +1,2 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal() // ✅ Needed for plugin resolution
-        mavenCentral()
-    }
-}
+rootProject.name = "CopyPasteReplace"
+

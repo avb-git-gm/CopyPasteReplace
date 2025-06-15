@@ -1,62 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<idea-plugin
+<idea-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="schemas/idea-plugin.xsd">
 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="schemas/idea-plugin.xsd">
-
-    <idea-version since-build="243.24978.46" until-build="243.*"/>
-
-
-    <id>com.giabrend.instacode</id>
-    <name>InstaCode</name>
-    <version>1.0.1</version>
-    <vendor email="avb@giabrend.com" url="https://github.com/avb-git-gm">Giabrend LLC</vendor>
+    <id>com.giabrend.CopyPasteReplace</id>
+    <name>CopyPasteReplace</name>
+    <version>1.0.0</version>
+    <vendor email="avb@giabrend.com" url="https://github.com/avb-git-gm">Giabrend</vendor>
 
     <description><![CDATA[
-        A lightweight tool that allows you to manage the content of the current editor window with a single click, 
-        either via the toolbar or the right-click (context) menu.<br><br>
+        A lightweight tool that allows you to manage the content of the current editor window with a single click,
+        either via the toolbar or the right-click (context) menu.
 
-        <b>Available Actions:</b><br>
-        <ul>
-            <li><b>Copy All Content:</b> Selects all content and copies it to the clipboard.</li>
-            <li><b>Replace All Content:</b> Replaces all content with clipboard content.</li>
-            <li><b>Delete All Content:</b> Clears all content from the active editor.</li>
-        </ul>
+        Available Actions:
+        - Copy All Content: Selects all content and copies it to the clipboard.
+        - Replace All Content: Replaces all content with clipboard content.
+        - Delete All Content: Clears all content from the active editor.
+
         All actions provide visual feedback and are enabled only when an editor is active.
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
     <actions>
-        <!-- Copy All Content Action -->
-        <action id="com.giabrend.instacode.CopyAllCodeAction"
-                class="com.giabrend.instacode.CopyAllCodeAction"
-                text="Copy All"
-                description="Copy all content from the active editor"
+        <action id="com.giabrend.CopyPasteReplace.CopyAllCodeAction"
+                class="com.giabrend.CopyPasteReplace.CopyAllCodeAction"
+                text="Copy All Content"
+                description="Copies all content from the active editor."
                 icon="/icons/pluginCopyAllIcon.svg">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
             <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="MainToolbarCenter" anchor="last"/>
         </action>
 
-        <!-- Replace All Content Action -->
-        <action id="com.giabrend.instacode.PasteReplaceContent"
-                class="com.giabrend.instacode.PasteReplaceContent"
-                text="Replace All with Clipboard Content"
-                description="Replace all content with clipboard content"
+        <action id="com.giabrend.CopyPasteReplace.PasteReplaceContent"
+                class="com.giabrend.CopyPasteReplace.PasteReplaceContent"
+                text="Replace All Content"
+                description="Replaces all content with clipboard content."
                 icon="/icons/pluginPasteReplaceIcon.svg">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
             <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="MainToolbarCenter" anchor="last"/>
         </action>
 
-        <!-- Delete All Content Action -->
-        <action id="com.giabrend.instacode.SelectAllDeleteAction"
-                class="com.giabrend.instacode.SelectAllDeleteAction"
-                text="Delete All"
-                description="Clear content of active editor"
+        <action id="com.giabrend.CopyPasteReplace.SelectAllDeleteAction"
+                class="com.giabrend.CopyPasteReplace.SelectAllDeleteAction"
+                text="Delete All Content"
+                description="Deletes all content from the active editor."
                 icon="/icons/pluginDeleteIcon.svg">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
             <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="MainToolbarCenter" anchor="last"/>
         </action>
     </actions>
-
 </idea-plugin>

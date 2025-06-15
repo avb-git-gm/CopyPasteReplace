@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.jetbrains.com/intellij/plugin"
+    xmlns="http://www.jetbrains.com/intellij/plugin"
+    elementFormDefault="qualified">
+
+  <!-- The root element of the plugin descriptor -->
+  <xs:element name="idea-plugin">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Optional: Unique identifier -->
+        <xs:element name="id" type="xs:string" minOccurs="0"/>
+        <!-- Public name (required) -->
+        <xs:element name="name" type="xs:string"/>
+        <!-- Version (required) -->
+        <xs:element name="version" type="xs:string"/>
+        <!-- Optional product-descriptor -->
+        <xs:element name="product-descriptor" minOccurs="0">
+          <xs:complexType>
+            <xs:attribute name="code" type="xs:string" use="required"/>
+            <xs:attribute name="release-date" type="xs:string" use="required"/>
+            <xs:attribute name="release-version" type="xs:string" use="required"/>
+            <xs:attribute name="optional" type="xs:boolean" default="false"/>
+            <xs:attribute name="eap" type="xs:boolean" default="false"/>
+          </xs:complexType>
+        </xs:element>
+        <!-- Idea version (required) -->
+        <xs:element name="idea-version">
+          <xs:complexType>
+            <xs:attribute name="since-build" type="xs:string" use="required"/>
+            <xs:attribute name="until-build" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <!-- Vendor (required) -->
+        <xs:element name="vendor">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="url" type="xs:string" use="optional"/>
+                <xs:attribute name="email" type="xs:string" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <!-- Description (required) -->
+        <xs:element name="description" type="xs:string"/>
+        <!-- Optional change-notes -->
+        <xs:element name="change-notes" type="xs:string" minOccurs="0"/>
+        <!-- Zero or more depends -->
+        <xs:element name="depends" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <!-- Optional incompatible-with -->
+        <xs:element name="incompatible-with" type="xs:string" minOccurs="0"/>
+        <!-- Optional extensions -->
+        <xs:element name="extensions" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="extension" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="defaultExtensionNs" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <!-- Optional extensionPoints -->
+        <xs:element name="extensionPoints" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="extensionPoint" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="with" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="optional"/>
+                  <xs:attribute name="qualifiedName" type="xs:string" use="optional"/>
+                  <xs:attribute name="interface" type="xs:string" use="optional"/>
+                  <xs:attribute name="beanClass" type="xs:string" use="optional"/>
+                  <xs:attribute name="dynamic" type="xs:boolean" default="false"/>
+                  <xs:attribute name="area" type="xs:string" default="IDEA_APPLICATION"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Zero or more resource-bundle elements -->
+        <xs:element name="resource-bundle" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <!-- Optional actions element -->
+        <xs:element name="actions" minOccurs="0">
+          <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="action" type="xs:anyType"/>
+              <xs:element name="group" type="xs:anyType"/>
+              <xs:element name="reference" type="xs:anyType"/>
+              <xs:element name="separator" type="xs:anyType"/>
+            </xs:choice>
+            <xs:attribute name="resource-bundle" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <!-- Optional applicationListeners -->
+        <xs:element name="applicationListeners" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="listener" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Optional projectListeners -->
+        <xs:element name="projectListeners" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="listener" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="url" type="xs:string" use="optional"/>
+      <xs:attribute name="require-restart" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

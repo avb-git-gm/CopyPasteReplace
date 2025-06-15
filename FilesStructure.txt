@@ -1,0 +1,19 @@
+CopyPasteReplacePlugin
+├── build.gradle.kts
+├── settings.gradle.kts
+└── src
+    └── main
+        ├── kotlin
+        │   └── com.giabrend.copypastereplace
+        │       ├── CopyAllCodeAction.kt
+        │       ├── PasteReplaceContent.kt
+        │       ├── SelectAllDeleteAction.kt
+        │       └── CPRIcons.kt
+        └── resources
+            ├── META-INF
+            │   └── plugin.xml
+            └── icons
+                ├── pluginCopyAllIcon.svg
+                ├── pluginPasteReplaceIcon.svg
+                ├── pluginDeleteIcon.svg
+                └── pluginCheckIcon.svg
