@@ -1,8 +1,8 @@
 <idea-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/idea-plugin.xsd">
-  <idea-version since-build="251" until-build="255.*" />
+  <idea-version since-build="251" until-build="252.*" />
   <id>com.giabrend.CopyPasteReplace</id>
   <name>CopyPasteReplace</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <vendor email="avb@giabrend.com" url="https://github.com/avb-git-gm">Giabrend</vendor>
   <description><![CDATA[A lightweight tool that allows you to manage the content of the current editor window with a single click,
         either via the toolbar or the right-click (context) menu.

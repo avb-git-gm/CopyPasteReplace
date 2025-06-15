@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.giabrend"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -26,7 +26,7 @@ tasks {
     }
     patchPluginXml {
         sinceBuild.set("251")
-        untilBuild.set("255.*")
+        untilBuild.set("252.*")
     }
 }
 
